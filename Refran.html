@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refranes Aleatorios</title>
+  <link rel="stylesheet" href="estilosREFRAN.CSS">
+</head>
+<body>
+  <button onclick="mostrarRefran()">Mostrar Refrán</button>
+  <p id="refran"></p>
+
+  <script>
+    const refranesOriginales = [
+      "A caballo regalado, no se le mira el diente.",
+      "Más vale pájaro en mano que ciento volando.",
+      "El que madruga, Dios lo ayuda.",
+      "No por mucho madrugar amanece más temprano.",
+      "A palabras necias, oídos sordos.",
+      "Ojos que no ven, corazón que no siente.",
+      "Camarón que se duerme, se lo lleva la corriente.",
+      "Al mal tiempo, buena cara.",
+      "Cuando el río suena, agua lleva.",
+      "Más vale tarde que nunca."
+    ];
+
+    let refranes = [...refranesOriginales];
+
+    function mostrarRefran() {
+      if (refranes.length === 0) {
+        refranes = [...refranesOriginales];
+      }
+      const indice = Math.floor(Math.random() * refranes.length);
+      const refranSeleccionado = refranes.splice(indice, 1)[0];
+      document.getElementById('refran').innerText = refranSeleccionado;
+    }
+  </script>
+</body>
+</html>
